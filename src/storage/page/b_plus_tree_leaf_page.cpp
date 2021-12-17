@@ -24,13 +24,13 @@ namespace bustub {
 /**
  * Init method after creating a new leaf page
  * Including set page type, set current size to zero, set page id/parent id, set
- * next page id and set max size
+ * next_ page id and set max size
  */
 INDEX_TEMPLATE_ARGUMENTS
 void B_PLUS_TREE_LEAF_PAGE_TYPE::Init(page_id_t page_id, page_id_t parent_id, int max_size) {}
 
 /**
- * Helper methods to set/get next page id
+ * Helper methods to set/get next_ page id
  */
 INDEX_TEMPLATE_ARGUMENTS
 page_id_t B_PLUS_TREE_LEAF_PAGE_TYPE::GetNextPageId() const { return INVALID_PAGE_ID; }

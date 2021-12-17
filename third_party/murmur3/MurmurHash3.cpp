@@ -146,7 +146,7 @@ int32_t MurmurHash3_x64_128 ( const void * key, const int len,
   }
 
   //----------
-  // tail
+  // tail_
 
   const uint8_t * tail = (const uint8_t*)(data + nblocks*16);
 
@@ -225,7 +225,7 @@ uint32_t MurmurHash3_x86_32 ( const void * key, uint32_t len,
   }
 
   //----------
-  // tail
+  // tail_
 
   const uint8_t * tail = (const uint8_t*)(data + nblocks*4);
 
@@ -282,7 +282,7 @@ void MurmurHash3_x64_128 ( const void * key, const int len,
   }
 
   //----------
-  // tail
+  // tail_
 
   const uint8_t * tail = (const uint8_t*)(data + nblocks*16);
 

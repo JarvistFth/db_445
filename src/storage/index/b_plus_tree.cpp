@@ -154,7 +154,7 @@ bool BPLUSTREE_TYPE::Coalesce(N **neighbor_node, N **node,
 /*
  * Redistribute key & value pairs from one page to its sibling page. If index ==
  * 0, move sibling page's first key & value pair into end of input "node",
- * otherwise move sibling page's last key & value pair into head of input
+ * otherwise move sibling page's last key & value pair into head_ of input
  * "node".
  * Using template N to represent either internal page or leaf page.
  * @param   neighbor_node      sibling page of input "node"
@@ -301,7 +301,7 @@ void BPLUSTREE_TYPE::ToGraph(BPlusTreePage *page, BufferPoolManager *bpm, std::o
     out << "</TR>";
     // Print table end
     out << "</TABLE>>];\n";
-    // Print Leaf node link if there is a next page
+    // Print Leaf node link if there is a next_ page
     if (leaf->GetNextPageId() != INVALID_PAGE_ID) {
       out << leaf_prefix << leaf->GetPageId() << " -> " << leaf_prefix << leaf->GetNextPageId() << ";\n";
       out << "{rank=same " << leaf_prefix << leaf->GetPageId() << " " << leaf_prefix << leaf->GetNextPageId() << "};\n";
@@ -372,7 +372,7 @@ void BPLUSTREE_TYPE::ToString(BPlusTreePage *page, BufferPoolManager *bpm) const
   if (page->IsLeafPage()) {
     LeafPage *leaf = reinterpret_cast<LeafPage *>(page);
     std::cout << "Leaf Page: " << leaf->GetPageId() << " parent: " << leaf->GetParentPageId()
-              << " next: " << leaf->GetNextPageId() << std::endl;
+              << " next_: " << leaf->GetNextPageId() << std::endl;
     for (int i = 0; i < leaf->GetSize(); i++) {
       std::cout << leaf->KeyAt(i) << ",";
     }

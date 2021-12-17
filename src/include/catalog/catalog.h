@@ -224,7 +224,7 @@ class Catalog {
       index->InsertEntry(tuple->KeyFromTuple(schema, key_schema, key_attrs), tuple->GetRid(), txn);
     }
 
-    // Get the next OID for the new index
+    // Get the next_ OID for the new index
     const auto index_oid = next_index_oid_.fetch_add(1);
 
     // Construct index information; IndexInfo takes ownership of the Index itself
@@ -337,7 +337,7 @@ class Catalog {
   /** Map table name -> table identifiers. */
   std::unordered_map<std::string, table_oid_t> table_names_;
 
-  /** The next table identifier to be used. */
+  /** The next_ table identifier to be used. */
   std::atomic<table_oid_t> next_table_oid_{0};
 
   /**
@@ -350,7 +350,7 @@ class Catalog {
   /** Map table name -> index names -> index identifiers. */
   std::unordered_map<std::string, std::unordered_map<std::string, index_oid_t>> index_names_;
 
-  /** The next index identifier to be used. */
+  /** The next_ index identifier to be used. */
   std::atomic<index_oid_t> next_index_oid_{0};
 };
 

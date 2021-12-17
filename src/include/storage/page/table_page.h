@@ -59,7 +59,7 @@ class TablePage : public Page {
   /** @return the page ID of the previous table page */
   page_id_t GetPrevPageId() { return *reinterpret_cast<page_id_t *>(GetData() + OFFSET_PREV_PAGE_ID); }
 
-  /** @return the page ID of the next table page */
+  /** @return the page ID of the next_ table page */
   page_id_t GetNextPageId() { return *reinterpret_cast<page_id_t *>(GetData() + OFFSET_NEXT_PAGE_ID); }
 
   /** Set the page id of the previous page in the table. */
@@ -67,7 +67,7 @@ class TablePage : public Page {
     memcpy(GetData() + OFFSET_PREV_PAGE_ID, &prev_page_id, sizeof(page_id_t));
   }
 
-  /** Set the page id of the next page in the table. */
+  /** Set the page id of the next_ page in the table. */
   void SetNextPageId(page_id_t next_page_id) {
     memcpy(GetData() + OFFSET_NEXT_PAGE_ID, &next_page_id, sizeof(page_id_t));
   }
@@ -133,7 +133,7 @@ class TablePage : public Page {
   /**
    * @param cur_rid the RID of the current tuple
    * @param[out] next_rid the RID of the tuple following the current tuple
-   * @return true if the next tuple exists, false otherwise
+   * @return true if the next_ tuple exists, false otherwise
    */
   bool GetNextTupleRid(const RID &cur_rid, RID *next_rid);
 

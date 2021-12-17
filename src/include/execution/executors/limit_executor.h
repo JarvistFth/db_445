@@ -38,9 +38,9 @@ class LimitExecutor : public AbstractExecutor {
   void Init() override;
 
   /**
-   * Yield the next tuple from the limit.
-   * @param[out] tuple The next tuple produced by the limit
-   * @param[out] rid The next tuple RID produced by the limit
+   * Yield the next_ tuple from the limit.
+   * @param[out] tuple The next_ tuple produced by the limit
+   * @param[out] rid The next_ tuple RID produced by the limit
    * @return `true` if a tuple was produced, `false` if there are no more tuples
    */
   bool Next(Tuple *tuple, RID *rid) override;

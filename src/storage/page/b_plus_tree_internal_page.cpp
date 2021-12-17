@@ -142,7 +142,7 @@ void B_PLUS_TREE_INTERNAL_PAGE_TYPE::MoveAllTo(BPlusTreeInternalPage *recipient,
  * REDISTRIBUTE
  *****************************************************************************/
 /*
- * Remove the first key & value pair from this page to tail of "recipient" page.
+ * Remove the first key & value pair from this page to tail_ of "recipient" page.
  *
  * The middle_key is the separation key you should get from the parent. You need
  * to make sure the middle key is added to the recipient to maintain the invariant.
@@ -161,7 +161,7 @@ INDEX_TEMPLATE_ARGUMENTS
 void B_PLUS_TREE_INTERNAL_PAGE_TYPE::CopyLastFrom(const MappingType &pair, BufferPoolManager *buffer_pool_manager) {}
 
 /*
- * Remove the last key & value pair from this page to head of "recipient" page.
+ * Remove the last key & value pair from this page to head_ of "recipient" page.
  * You need to handle the original dummy key properly, e.g. updating recipient’s array to position the middle_key at the
  * right place.
  * You also need to use BufferPoolManager to persist changes to the parent page id for those pages that are

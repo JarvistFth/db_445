@@ -42,9 +42,9 @@ class DeleteExecutor : public AbstractExecutor {
   void Init() override;
 
   /**
-   * Yield the next tuple from the delete.
-   * @param[out] tuple The next tuple produced by the update
-   * @param[out] rid The next tuple RID produced by the update
+   * Yield the next_ tuple from the delete.
+   * @param[out] tuple The next_ tuple produced by the update
+   * @param[out] rid The next_ tuple RID produced by the update
    * @return `false` unconditionally (throw to indicate failure)
    *
    * NOTE: DeleteExecutor::Next() does not use the `tuple` out-parameter.

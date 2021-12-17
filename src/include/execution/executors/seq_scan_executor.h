@@ -37,9 +37,9 @@ class SeqScanExecutor : public AbstractExecutor {
   void Init() override;
 
   /**
-   * Yield the next tuple from the sequential scan.
-   * @param[out] tuple The next tuple produced by the scan
-   * @param[out] rid The next tuple RID produced by the scan
+   * Yield the next_ tuple from the sequential scan.
+   * @param[out] tuple The next_ tuple produced by the scan
+   * @param[out] rid The next_ tuple RID produced by the scan
    * @return `true` if a tuple was produced, `false` if there are no more tuples
    */
   bool Next(Tuple *tuple, RID *rid) override;

@@ -180,7 +180,7 @@ std::vector<std::string> StringUtil::Split(const std::string &input, const std::
       next = input_len;
     }
 
-    // Push the substring [last, next) on to splits.
+    // Push the substring [last, next_) on to splits.
     std::string substr = input.substr(last, next - last);
     if (!substr.empty()) {
       splits.push_back(substr);

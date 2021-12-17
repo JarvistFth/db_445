@@ -28,7 +28,7 @@ void TablePage::Init(page_id_t page_id, uint32_t page_size, page_id_t prev_page_
     SetLSN(lsn);
     txn->SetPrevLSN(lsn);
   }
-  // Set the previous and next page IDs.
+  // Set the previous and next_ page IDs.
   SetPrevPageId(prev_page_id);
   SetNextPageId(INVALID_PAGE_ID);
   SetFreeSpacePointer(page_size);

@@ -54,7 +54,7 @@ class LogManager {
  private:
   // TODO(students): you may add your own member variables
 
-  /** The atomic counter which records the next log sequence number. */
+  /** The atomic counter which records the next_ log sequence number. */
   std::atomic<lsn_t> next_lsn_;
   /** The log records before and including the persistent lsn have been written to disk. */
   std::atomic<lsn_t> persistent_lsn_;

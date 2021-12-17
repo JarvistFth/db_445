@@ -171,9 +171,9 @@ class AggregationExecutor : public AbstractExecutor {
   void Init() override;
 
   /**
-   * Yield the next tuple from the insert.
-   * @param[out] tuple The next tuple produced by the insert
-   * @param[out] rid The next tuple RID produced by the insert
+   * Yield the next_ tuple from the insert.
+   * @param[out] tuple The next_ tuple produced by the insert
+   * @param[out] rid The next_ tuple RID produced by the insert
    * @return `true` if a tuple was produced, `false` if there are no more tuples
    */
   bool Next(Tuple *tuple, RID *rid) override;

@@ -42,9 +42,9 @@ class NestedLoopJoinExecutor : public AbstractExecutor {
   void Init() override;
 
   /**
-   * Yield the next tuple from the join.
-   * @param[out] tuple The next tuple produced by the join
-   * @param[out] rid The next tuple RID produced by the join
+   * Yield the next_ tuple from the join.
+   * @param[out] tuple The next_ tuple produced by the join
+   * @param[out] rid The next_ tuple RID produced by the join
    * @return `true` if a tuple was produced, `false` if there are no more tuples
    */
   bool Next(Tuple *tuple, RID *rid) override;

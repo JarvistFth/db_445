@@ -53,12 +53,12 @@ bool TableHeap::InsertTuple(const Tuple &tuple, RID *rid, Transaction *txn) {
   // INVARIANT: cur_page is WLatched if you leave the loop normally.
   while (!cur_page->InsertTuple(tuple, rid, txn, lock_manager_, log_manager_)) {
     auto next_page_id = cur_page->GetNextPageId();
-    // If the next page is a valid page,
+    // If the next_ page is a valid page,
     if (next_page_id != INVALID_PAGE_ID) {
       // Unlatch and unpin the current page.
       cur_page->WUnlatch();
       buffer_pool_manager_->UnpinPage(cur_page->GetTablePageId(), false);
-      // And repeat the process with the next page.
+      // And repeat the process with the next_ page.
       cur_page = static_cast<TablePage *>(buffer_pool_manager_->FetchPage(next_page_id));
       cur_page->WLatch();
     } else {
