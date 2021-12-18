@@ -34,11 +34,11 @@
 /GSYMS
 /GTAGS
 .gitusers
-autom4te.cache
+autom4te.cache_
 cscope.files
 cscope.out
 autoconf/aclocal.m4
-autoconf/autom4te.cache
+autoconf/autom4te.cache_
 /compile_commands.json
 
 
@@ -48,7 +48,7 @@ autoconf/autom4te.cache
 config/
 configure
 config-h.in
-autom4te.cache
+autom4te.cache_
 *Makefile.in
 *Makefile
 libtool

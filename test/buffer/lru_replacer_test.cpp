@@ -59,4 +59,33 @@ TEST(LRUReplacerTest, LRUSampleTest) {
   EXPECT_EQ(4, value);
 }
 
+TEST(LRUReplacerTest, BasicTest) {
+  LRUReplacer lru_replacer(100);
+
+  // push element into replacer
+  for (int i = 0; i < 100; ++i) {
+    lru_replacer.Unpin(i);
+  }
+  EXPECT_EQ(100, lru_replacer.Size());
+
+  // reverse then insert again
+  for (int i = 0; i < 100; ++i) {
+    lru_replacer.Unpin(99 - i);
+  }
+
+  // erase 50 element from the tail
+
+  for (int i = 0; i < 50; ++i) {
+    lru_replacer.Pin(i);
+  }
+
+  // check left
+  int value = -1;
+  for (int i = 99; i >= 50; --i) {
+    lru_replacer.Victim(&value);
+    EXPECT_EQ(i, value);
+    value = -1;
+  }
+}
+
 }  // namespace bustub

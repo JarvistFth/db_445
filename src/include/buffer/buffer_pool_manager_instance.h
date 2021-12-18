@@ -58,7 +58,7 @@ class BufferPoolManagerInstance : public BufferPoolManager {
   /** @return pointer to all the pages in the buffer pool */
   Page *GetPages() { return pages_; }
 
-  uint32_t GetInstanceIndex(){ return instance_index_; }
+  uint32_t GetInstanceIndex() { return instance_index_; }
 
  protected:
   /**
@@ -123,10 +123,6 @@ class BufferPoolManagerInstance : public BufferPoolManager {
    */
   void ValidatePageId(page_id_t page_id) const;
 
-  Page* getPageFromFrameId(frame_id_t frameId) ;
-
-  Page* tryGetPageFromFreeListOrLRU(frame_id_t *frameId);
-
   /** Number of pages in the buffer pool. */
   const size_t pool_size_;
   /** How many instances are in the parallel BPM (if present, otherwise just 1 BPI) */
@@ -149,7 +145,7 @@ class BufferPoolManagerInstance : public BufferPoolManager {
   /** ListNode of free pages. */
   std::list<frame_id_t> free_list_;
   /** This latch protects shared data structures. We recommend updating this comment to describe what it protects. */
-  //protects: pageTable, freeList, replacer
+  // protects: pageTable, freeList, replacer
   std::mutex latch_;
 };
 }  // namespace bustub
